@@ -1,6 +1,6 @@
 
 import React, { useState } from 'react';
-import { Calendar, Clock, Bike, MapPin, ArrowRight } from 'lucide-react';
+import { Calendar, Clock, Bike, MapPin, ArrowRight, ChevronRight } from 'lucide-react';
 import { cn } from '@/lib/utils';
 
 const BookingSection = () => {
