@@ -45,7 +45,7 @@ const HowItWorksSection = () => {
       icon: <MapPin className="h-8 w-8" />,
       number: 3,
       title: "Defina o local",
-      description: "Escolha o local de retirada ou solicite a entrega em seu endereço."
+      description: "Agende a retirada da moto, e marque o horario."
     },
     {
       icon: <CreditCard className="h-8 w-8" />,

@@ -54,8 +54,8 @@ const FeaturesSection = () => {
     },
     {
       icon: <MapPin className="h-6 w-6" />,
-      title: "Entrega em Domicílio",
-      description: "Receba e devolva a moto no conforto da sua casa ou hotel."
+      title: "Agendamento em 24h",
+      description: "Escolha e receba sua moto em até 24 horas."
     }
   ];
 

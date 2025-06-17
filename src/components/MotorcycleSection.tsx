@@ -2,6 +2,9 @@
 import React, { useState } from 'react';
 import { Bike, Users, Calendar, ArrowRight, ChevronLeft, ChevronRight } from 'lucide-react';
 import { cn } from '@/lib/utils';
+import pop from "../../public/pop-100.png"
+import cargo from "../../public/honda-cargo.jpg"
+import start from "../../public/start.webp"
 
 interface Motorcycle {
   id: number;
@@ -17,40 +20,31 @@ const MotorcycleSection = () => {
   const motorcycles: Motorcycle[] = [
     {
       id: 1,
-      name: "Honda CB 500X",
-      category: "Adventure",
-      image: "https://images.unsplash.com/photo-1558979159-2b18a4070a87?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2071&q=80",
+      name: "Pop 100",
+      category: "Econômicas",
+      image: pop,
       pricePerDay: 120,
       pricePerWeek: 700,
-      features: ["ABS", "49 cv", "Ideal para viagens", "Econômica"]
+      features: ["💰 Baixo consumo de combustível", "🛠 Manutenção simples", "🕧 Ideal para o dia a dia"]
     },
     {
       id: 2,
-      name: "Yamaha MT-07",
-      category: "Naked",
-      image: "https://images.unsplash.com/photo-1605426051013-0abb919a33a9?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80",
+      name: "Honda CG 160 Cargo",
+      category: "Trabalho / Carga",
+      image: cargo,
       pricePerDay: 150,
       pricePerWeek: 850,
-      features: ["ABS", "74 cv", "Ágil", "Potente"]
+      features: ["📦 Suporte para baú grande", "⚙️ Indicada para entregas e empresas"]
     },
     {
       id: 3,
-      name: "BMW G 310 GS",
-      category: "Adventure",
-      image: "https://images.unsplash.com/photo-1599819811279-d5ad9cccf838?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80",
+      name: "Honda Start 160",
+      category: "Utilitárias Urbanas",
+      image: start,
       pricePerDay: 140,
       pricePerWeek: 800,
-      features: ["ABS", "34 cv", "Confortável", "Alta"]
+      features: ["⚡ Equilíbrio entre força e economia", "✅ Boa para entregas rápidas e uso pessoal", " 🏍️Confortável",]
     },
-    {
-      id: 4,
-      name: "Kawasaki Ninja 400",
-      category: "Sport",
-      image: "https://images.unsplash.com/photo-1535050804459-06db46aac01a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2069&q=80",
-      pricePerDay: 180,
-      pricePerWeek: 1000,
-      features: ["ABS", "49 cv", "Esportiva", "Veloz"]
-    }
   ];
 
   const [activeCategory, setActiveCategory] = useState<string>("Todos");

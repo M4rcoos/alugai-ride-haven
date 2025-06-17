@@ -1,7 +1,7 @@
-
 import React, { useState, useEffect } from 'react';
 import { cn } from '@/lib/utils';
 import { Menu, X } from 'lucide-react';
+import iconHeader from "../../public/icon.png";
 
 const NavBar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -9,11 +9,7 @@ const NavBar = () => {
 
   useEffect(() => {
     const handleScroll = () => {
-      if (window.scrollY > 50) {
-        setScrolled(true);
-      } else {
-        setScrolled(false);
-      }
+      setScrolled(window.scrollY > 50);
     };
 
     window.addEventListener('scroll', handleScroll);
@@ -32,18 +28,14 @@ const NavBar = () => {
     <header
       className={cn(
         'fixed top-0 left-0 right-0 z-50 transition-all duration-300 ease-in-out',
-        scrolled 
-          ? 'bg-white/95 backdrop-blur-md shadow-sm py-4' 
-          : 'bg-transparent py-6'
+        scrolled ? 'bg-white/95 backdrop-blur-md shadow-sm py-3' : 'bg-transparent py-4'
       )}
     >
-      <div className="container mx-auto px-4 flex justify-between items-center">
-        <a href="#hero" className="flex items-center">
-          <div className="font-bold text-2xl tracking-tight">
-            <span className="text-brand-orange">ALUGA</span>
-            <span className="text-brand-dark">AI</span>
-          </div>
-        </a>
+      <div className="container mx-auto px-4 flex items-center justify-between">
+        {/* Logo */}
+        <div className="flex items-center">
+          <img src={iconHeader} alt="Logo Alugaii" className="h-10 w-auto md:h-16" />
+        </div>
 
         {/* Desktop Navigation */}
         <nav className="hidden md:flex items-center space-x-8">
@@ -70,11 +62,7 @@ const NavBar = () => {
           className="md:hidden text-gray-700 focus:outline-none"
           aria-label="Toggle menu"
         >
-          {isMenuOpen ? (
-            <X className="h-6 w-6" />
-          ) : (
-            <Menu className="h-6 w-6" />
-          )}
+          {isMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
         </button>
       </div>
 
@@ -85,7 +73,7 @@ const NavBar = () => {
           isMenuOpen ? 'max-h-screen' : 'max-h-0'
         )}
       >
-        <div className="container mx-auto px-4 py-4 flex flex-col space-y-4">
+        <div className="px-4 py-4 flex flex-col space-y-4">
           {navLinks.map((link) => (
             <a
               key={link.name}

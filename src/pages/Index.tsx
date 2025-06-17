@@ -19,7 +19,7 @@ const Index = () => {
       if (target.tagName === 'A' && target.getAttribute('href')?.startsWith('#')) {
         const href = target.getAttribute('href');
         if (!href) return;
-        
+
         e.preventDefault();
         const element = document.querySelector(href);
         if (element) {
@@ -45,7 +45,7 @@ const Index = () => {
         <HowItWorksSection />
         <TestimonialsSection />
         <BookingSection />
-        <CTASection />
+        {/* <CTASection /> */}
         <ContactSection />
       </main>
       <FooterSection />
